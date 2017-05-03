@@ -33,12 +33,14 @@ public final class Printout {
     public ArrayList<String> getTextList() {
         return text;
     }
+
     /**
-     * 
+     *
      * @param inspectionCatalog
-     * @return An <code>ArrayList</code> of strings with "Passed" or "Failed" at every index.
+     * @return An <code>ArrayList</code> of strings with "Passed" or "Failed" at
+     * every index.
      */
-    public ArrayList<String> setList(InspectionCatalog inspectionCatalog) {
+    private void setList(InspectionCatalog inspectionCatalog) {
         for (int i = 0; i < inspectionCatalog.getResultList().size(); i++) {
             if (inspectionCatalog.getResultList().get(i).getBoolean() == true) {
                 text.add(i, "Passed");
@@ -47,6 +49,6 @@ public final class Printout {
             }
 
         }
-        return text;
+
     }
 }

@@ -20,7 +20,7 @@ public class InspectionCatalog {
   */
     public void storeResult(boolean inspectionPassed){
         Result result = new Result(inspectionPassed);
-        this.resultList.add(result);
+        resultList.add(result);
     }
     
     /**

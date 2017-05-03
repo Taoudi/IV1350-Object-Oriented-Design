@@ -31,7 +31,6 @@ public class RegNumberRegistry {
                 valid = true;
             }
         }
-
         return valid;
     }
 

@@ -10,15 +10,18 @@ package se.kth.iv1305.vehicleinspection.model;
  * Receipt contains the information of the transaction in form of a string
  */
 public class Receipt {
+
     private String information;
-    public Receipt(String information){
+
+    public Receipt(String information) {
         this.information = information;
     }
+
     /**
-     * 
+     *
      * @return information of the transaction as a string
      */
-    public String toString(){
+    public String toString() {
         return information;
     }
 }
