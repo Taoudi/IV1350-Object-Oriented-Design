@@ -53,8 +53,9 @@ public class View {
         } else {
             System.out.println("Invalid number!");
         }
-
-        System.out.println("Cost is: " + contr.calculateCost(vehicle).getAmountAsDouble() + "Kr");
+        
+        contr.calculateCost(vehicle).getAmountAsDouble();
+        System.out.println("Cost is has been calculated!");
         
         
         if(contr.payWithCredit(creditCard,vehicle) == true){

@@ -25,7 +25,7 @@ public final class VehicleDTO {
      * @param regNumber is the registration number for the vehicle
      * @param inspectedParts are the amount of parts that have been inspected
      */
-    public VehicleDTO(String regNumber) {       
+    public VehicleDTO(String regNumber) {
         addParts();
         this.regNumber = regNumber;
     }
@@ -38,8 +38,6 @@ public final class VehicleDTO {
         int listSize = this.listOfParts.size();
         return listSize;
     }
-    
-  
 
     /**
      *
@@ -49,25 +47,27 @@ public final class VehicleDTO {
         return regNumber;
     }
 
-   private void addParts(){
-       listOfParts.add(new VehiclePart("Brake"));
-       listOfParts.add(new VehiclePart("Clutch"));
-       listOfParts.add(new VehiclePart("Engine"));
-       listOfParts.add(new VehiclePart("Exhaust"));
-    
-   }
+    private void addParts() {
+        listOfParts.add(new VehiclePart("Brake"));
+        listOfParts.add(new VehiclePart("Clutch"));
+        listOfParts.add(new VehiclePart("Engine"));
+        listOfParts.add(new VehiclePart("Exhaust"));
+
+    }
 
     /**
+     * inspectedParts increments for every call so that the next time the method
+     * is called the next element in the list is returned
      *
      * @return returns a vehicle part as a string from the list of available
-     * parts if there are no more parts to inspect, it returns "No more
-     * inspections." as a string.
+     * parts
      */
-   public VehiclePart findPart(){
-       return listOfParts.get(inspectedParts++);
-   }
-   
-   public ArrayList<VehiclePart> getListOfParts(){
-       return listOfParts;
-   }
+    public VehiclePart findPart() {
+        return listOfParts.get(inspectedParts++);
+    }
+    
+
+    public ArrayList<VehiclePart> getListOfParts() {
+        return listOfParts;
+    }
 }
