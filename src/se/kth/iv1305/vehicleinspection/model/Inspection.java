@@ -28,7 +28,7 @@ public class Inspection {
     /**
      * This method creates a receipt with a string that is printed out as a System printout.
      */
-    public  void printReceipt() {
+    public void printReceipt() {
         Receipt receipt = new Receipt(Double.toString(payment.amountCost.getAmountAsDouble()) + " was payed for the Inspection");
         printer.printReceipt(receipt);
     }

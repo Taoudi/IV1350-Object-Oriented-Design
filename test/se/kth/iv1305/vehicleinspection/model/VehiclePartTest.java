@@ -5,7 +5,6 @@
  */
 package se.kth.iv1305.vehicleinspection.model;
 
-import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author taoudi
  */
-public class PrintoutTest {
+public class VehiclePartTest {
     
-    public PrintoutTest() {
+    public VehiclePartTest() {
     }
     
     @BeforeClass
@@ -39,17 +38,24 @@ public class PrintoutTest {
     }
 
     /**
-     * Test of getTextList method, of class Printout.
+     * Test of toString method, of class VehiclePart with empty string as parameter.
      */
     @Test
-    public void testGetTextList() {
-        System.out.println("getTextList");
-        Printout instance = null;
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = instance.getTextList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testToStringEmptyString() {
+        VehiclePart instance = new VehiclePart("");
+        String expResult = "";
+        String result = instance.toString();
+        assertEquals("Wrong string returned", expResult, result);
     }
     
+    /**
+     * Test of toString method, of class VehiclePart.
+     */
+    @Test
+    public void testToString() {
+        VehiclePart instance = new VehiclePart("ABC123");
+        String expResult = "ABC123";
+        String result = instance.toString();
+        assertEquals("Wrong string returned",expResult, result);
+    }
 }
