@@ -21,6 +21,7 @@ class Main {
      * Starts the application.
      *
      * @param args The application does not take any command line parameters.
+     * @throws InvalidNumberException if reg number is invalid
      */
     public static void main(String[] args) throws InvalidNumberException {
         try {

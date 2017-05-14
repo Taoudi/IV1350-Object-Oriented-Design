@@ -31,7 +31,8 @@ public class View {
      * creates new instance
      *
      * @param contr the controller that is used for all system operations.
-     *
+     * 
+     * @throws IOException if there is an exception to write to log
      */
     public View(Controller contr) throws IOException{
         this.contr = contr;
@@ -41,7 +42,7 @@ public class View {
    /**
     * Simulation of the view 
     * 
-    * @throws InvalidNumberException
+    * @throws InvalidNumberException if number is invalid
     */
     public void sampleExecution() throws InvalidNumberException {
 
