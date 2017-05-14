@@ -36,6 +36,7 @@ public class View {
      */
     public View(Controller contr) throws IOException{
         this.contr = contr;
+        contr.addResultObserver(new InspectionStatsView() {});
         this.log = new LogHandler();
     }
 
@@ -46,7 +47,9 @@ public class View {
     */
     public void sampleExecution() throws InvalidNumberException {
 
-        VehicleDTO vehicle = new VehicleDTO("LUX123");
+        VehicleDTO vehicle = new VehicleDTO("LUL123");
+        VehicleDTO invalidVehicle = new VehicleDTO("INVALID");
+
         CardDTO creditCard = new CardDTO(1324, "12345678", "hejsan", 123, 832);
         boolean[] resultList = {true, false, true, true};
         contr.nextCustomer();
@@ -55,7 +58,15 @@ public class View {
         contr.closeDoor();
         System.out.println("Door is closed!");
 
-       
+        try {
+            System.out.println("Checking register number.");
+            if (contr.checkRegNumber(invalidVehicle) == true) {
+                System.out.println("Number is valid!");
+            }
+        }
+            catch(InvalidNumberException exc){
+            handleException("Invalid number, try again.", exc);
+        }
         try {
             System.out.println("Checking register number.");
             if (contr.checkRegNumber(vehicle) == true) {
@@ -72,13 +83,20 @@ public class View {
         if (contr.payWithCredit(creditCard, vehicle) == true) {
             System.out.println("Payment went through");
         }
-
+        
+        
         //Hard code results for the inspections
         for (int i = 0; i < vehicle.getListOfParts().size(); i++) {
             System.out.println("Result for " + contr.specifyPart(vehicle).toString() + " has been stored in catalog");
             contr.storeResult(resultList[i]);
+
+          
         }
+        
         contr.printResult(vehicle);
+        
+        
+    
 
     }
 

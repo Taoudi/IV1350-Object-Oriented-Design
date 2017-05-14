@@ -1,6 +1,6 @@
-Exception was thrown: The register number: LUX123is invalid
-se.kth.iv1305.vehicleinspection.model.InvalidNumberException: The register number: LUX123is invalid
+Exception was thrown: The register number: INVALIDis invalid
+se.kth.iv1305.vehicleinspection.model.InvalidNumberException: The register number: INVALIDis invalid
 	at se.kth.iv1305.vehicleinspection.integration.RegNumberRegistry.checkIfValid(RegNumberRegistry.java:36)
-	at se.kth.iv1305.vehicleinspection.controller.Controller.checkRegNumber(Controller.java:65)
-	at se.kth.iv1305.vehicleinspection.view.View.sampleExecution(View.java:60)
-	at se.kth.iv1305.vehicleinspection.Main.main(Main.java:31)
+	at se.kth.iv1305.vehicleinspection.controller.Controller.checkRegNumber(Controller.java:72)
+	at se.kth.iv1305.vehicleinspection.view.View.sampleExecution(View.java:63)
+	at se.kth.iv1305.vehicleinspection.Main.main(Main.java:32)

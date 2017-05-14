@@ -11,11 +11,11 @@ package se.kth.iv1305.vehicleinspection.integration;
  */
 public class Result {
 
-    private final boolean didItPass;
+    private  boolean didItPass;
 
     /**
      *
-     * @param <code>true</code> if it passed, <code>false</code> if it failed.
+     * @param didItPass - <code>true</code> if it passed, <code>false</code> if it failed.
      */
     public Result(boolean didItPass) {
         this.didItPass = didItPass;
@@ -28,4 +28,10 @@ public class Result {
     public boolean getBoolean() {
         return this.didItPass;
     }
+    
+    /**
+     * Specifies if failed nor not
+     */
+    
+
 }

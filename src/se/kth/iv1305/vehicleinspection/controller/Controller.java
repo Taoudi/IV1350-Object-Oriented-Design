@@ -6,6 +6,7 @@
 package se.kth.iv1305.vehicleinspection.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import se.kth.iv1305.vehicleinspection.integration.InspectionCatalog;
 import se.kth.iv1305.vehicleinspection.model.garage.Garage;
 import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
@@ -16,8 +17,8 @@ import se.kth.iv1305.vehicleinspection.model.Amount;
 import se.kth.iv1305.vehicleinspection.model.CardDTO;
 import se.kth.iv1305.vehicleinspection.integration.PaymentAuthorizationSystem;
 import se.kth.iv1305.vehicleinspection.integration.Printer;
-import se.kth.iv1305.vehicleinspection.integration.RegNumberRegistryException;
 import se.kth.iv1305.vehicleinspection.integration.Result;
+import se.kth.iv1305.vehicleinspection.integration.ResultObserver;
 import se.kth.iv1305.vehicleinspection.model.Inspection;
 import se.kth.iv1305.vehicleinspection.model.Printout;
 import se.kth.iv1305.vehicleinspection.model.VehiclePart;
@@ -29,6 +30,7 @@ import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
  */
 public class Controller {
 
+    private List<ResultObserver> resultObservers = new ArrayList<>();
     private Garage garage;
     private RegNumberRegistry numberList;
     private Printer printer;
@@ -46,6 +48,11 @@ public class Controller {
      */
     public void nextCustomer() {
         garage.nextCustomer();
+        inspectionCatalog.addResultObservers(resultObservers);
+    }
+
+    public void addResultObserver(ResultObserver obs) {
+        resultObservers.add(obs);
     }
 
     /**
@@ -62,7 +69,7 @@ public class Controller {
      * @throws InvalidNumberException if number is invalid
      */
     public boolean checkRegNumber(VehicleDTO vehicle) throws InvalidNumberException {
-            return RegNumberRegistry.checkIfValid(vehicle);
+        return RegNumberRegistry.checkIfValid(vehicle);
 
     }
 
