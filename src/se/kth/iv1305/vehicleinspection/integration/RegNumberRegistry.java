@@ -5,6 +5,7 @@
  */
 package se.kth.iv1305.vehicleinspection.integration;
 
+import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
 
 /**
@@ -24,13 +25,15 @@ public class RegNumberRegistry {
      * @return A boolean <code>valid</code> that determines whether the
      * registration number is valid or not
      */
-    public static  boolean checkIfValid(VehicleDTO vehicle) {
+    public static  boolean checkIfValid(VehicleDTO vehicle) throws InvalidNumberException {
         boolean valid = false;
         for (int i = 0; i < NumberList.length; i++) {
             if (vehicle.getRegNumber() == NumberList[i]) {
                 valid = true;
             }
         }
+        if(valid==false)
+            throw new InvalidNumberException(vehicle);
         return valid;
     }
 
