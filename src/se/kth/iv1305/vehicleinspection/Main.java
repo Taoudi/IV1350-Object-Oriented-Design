@@ -12,7 +12,6 @@ import se.kth.iv1305.vehicleinspection.integration.RegistryCreator;
 import se.kth.iv1305.vehicleinspection.integration.Printer;
 import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 import se.kth.iv1305.vehicleinspection.model.garage.Garage;
-import se.kth.iv1305.vehicleinspection.controller.OperationFailedException;
 /**
  * Performs all startup of program
  */

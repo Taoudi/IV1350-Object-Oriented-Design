@@ -59,13 +59,10 @@ public class Controller {
      *
      * @param vehicle
      * @return true means the regnumber is valid, false means its not
+     * @throws InvalidNumberException
      */
-    public boolean checkRegNumber(VehicleDTO vehicle) throws InvalidNumberException, OperationFailedException {
-        try {
+    public boolean checkRegNumber(VehicleDTO vehicle) throws InvalidNumberException {
             return RegNumberRegistry.checkIfValid(vehicle);
-        } catch (RegNumberRegistryException regNumRegExc) {
-            throw new OperationFailedException("Could not check number.", regNumRegExc);
-        }
 
     }
 

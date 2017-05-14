@@ -8,7 +8,6 @@ package se.kth.iv1305.vehicleinspection.view;
 import java.io.IOException;
 import java.util.*;
 import se.kth.iv1305.vehicleinspection.controller.Controller;
-import se.kth.iv1305.vehicleinspection.controller.OperationFailedException;
 import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
 import se.kth.iv1305.vehicleinspection.model.VehiclePart;
 import se.kth.iv1305.vehicleinspection.model.CardDTO;
@@ -39,10 +38,12 @@ public class View {
         this.log = new LogHandler();
     }
 
-    /**
-     * simulates user input that generates calls to all system operations
-     */
-    public void sampleExecution() throws InvalidNumberException, OperationFailedException {
+   /**
+    * Simulation of the view 
+    * 
+    * @throws InvalidNumberException
+    */
+    public void sampleExecution() throws InvalidNumberException {
 
         VehicleDTO vehicle = new VehicleDTO("LUX123");
         CardDTO creditCard = new CardDTO(1324, "12345678", "hejsan", 123, 832);
@@ -53,20 +54,13 @@ public class View {
         contr.closeDoor();
         System.out.println("Door is closed!");
 
-        /**
-         * if (contr.checkRegNumber(vehicle) == true) {
-         * System.out.println("Number is valid!"); } else {
-         * System.out.println("Invalid number!"); } *
-         */
+       
         try {
             System.out.println("Checking register number.");
             if (contr.checkRegNumber(vehicle) == true) {
                 System.out.println("Number is valid!");
             }
         }
-            catch(OperationFailedException exc){
-                handleException("Wrong exception type.", exc);
-            }
             catch(InvalidNumberException exc){
             handleException("INVALID NUMBER", exc);
         }

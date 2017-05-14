@@ -2,5 +2,5 @@ Exception was thrown: The register number: LUX123is invalid
 se.kth.iv1305.vehicleinspection.model.InvalidNumberException: The register number: LUX123is invalid
 	at se.kth.iv1305.vehicleinspection.integration.RegNumberRegistry.checkIfValid(RegNumberRegistry.java:36)
 	at se.kth.iv1305.vehicleinspection.controller.Controller.checkRegNumber(Controller.java:65)
-	at se.kth.iv1305.vehicleinspection.view.View.sampleExecution(View.java:63)
-	at se.kth.iv1305.vehicleinspection.Main.main(Main.java:32)
+	at se.kth.iv1305.vehicleinspection.view.View.sampleExecution(View.java:60)
+	at se.kth.iv1305.vehicleinspection.Main.main(Main.java:31)
