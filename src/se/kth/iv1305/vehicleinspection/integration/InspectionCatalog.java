@@ -31,7 +31,6 @@ public class InspectionCatalog {
     }
 
     /**
-     *
      * @return the list of results
      */
     public ArrayList<Result> getResultList() {
@@ -46,11 +45,15 @@ public class InspectionCatalog {
     /**
      * Any <code>ResultObserver</code> that is passed to this method will be notified
      * when a result is stored in catalog
-     * @param obs 
+     * @param obs instance of ResultObserver
      */
     public void addResultObserver(ResultObserver obs) {
         resultObservers.add(obs);
     }
+    /**
+     * Is needed if several instances of ResultObserver exists
+     * @param observers List of instances of ResultObserver
+     */
      public void addResultObservers(List<ResultObserver> observers) {
         resultObservers.addAll(observers);
     }

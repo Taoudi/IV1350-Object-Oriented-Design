@@ -8,6 +8,7 @@ package se.kth.iv1305.vehicleinspection;
 import java.io.IOException;
 import se.kth.iv1305.vehicleinspection.view.View;
 import se.kth.iv1305.vehicleinspection.controller.Controller;
+import se.kth.iv1305.vehicleinspection.integration.PaymentAuthorizationSystem;
 import se.kth.iv1305.vehicleinspection.integration.RegistryCreator;
 import se.kth.iv1305.vehicleinspection.integration.Printer;
 import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
@@ -28,7 +29,8 @@ class Main {
             Printer printer = new Printer();
             Garage garage = new Garage();
             RegistryCreator creator = new RegistryCreator();
-            Controller contr = new Controller(creator, garage, printer);
+            PaymentAuthorizationSystem paySystem = new PaymentAuthorizationSystem();
+            Controller contr = new Controller(creator, garage, printer, paySystem);
             new View(contr).sampleExecution();
             
         } catch (IOException ex) {

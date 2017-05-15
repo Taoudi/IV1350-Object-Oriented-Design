@@ -20,7 +20,7 @@ public class PaymentAuthorizationSystem {
      *         <code>false</code> if it is not. This dummy implementation always
      *         returns <code>true</code>.
      */
-    public static boolean authorizePayment(CardDTO card, Amount amount) {
+    public boolean authorizePayment(CardDTO card, Amount amount) {
         return true;
     }
 }

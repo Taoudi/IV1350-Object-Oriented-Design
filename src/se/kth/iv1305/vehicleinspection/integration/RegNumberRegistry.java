@@ -13,7 +13,7 @@ import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
  */
 public class RegNumberRegistry {
 
-    private static final String[] NumberList = {"LUL123", "CXD321", "DNA144", "ABC123"};
+    private final String[] NumberList = {"LUL123", "CXD321", "DNA144", "ABC123"};
 /**
 * This method compares all of the available registration numbers with the
 * one the customer has entered in the view
@@ -25,7 +25,7 @@ public class RegNumberRegistry {
 * registration number is valid or not
  * @throws InvalidNumberException if the number was invalid
  */
-    public static  boolean checkIfValid(VehicleDTO vehicle) throws InvalidNumberException {
+    public boolean checkIfValid(VehicleDTO vehicle) throws InvalidNumberException {
         boolean valid = false;
         for (int i = 0; i < NumberList.length; i++) {
             if (vehicle.getRegNumber() == NumberList[i]) {

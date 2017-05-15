@@ -27,11 +27,6 @@ public class Result {
      */
     public boolean getBoolean() {
         return this.didItPass;
-    }
-    
-    /**
-     * Specifies if failed nor not
-     */
-    
+    }    
 
 }

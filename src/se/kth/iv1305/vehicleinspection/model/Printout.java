@@ -20,7 +20,7 @@ public final class Printout {
      * Uses the results stored in inspectionCatalog to create a new list of
      * strings (Printout) that will be printed out
      *
-     * @param inspectionCatalog
+     * @param inspectionCatalog - Where the results are stored
      */
     public Printout(InspectionCatalog inspectionCatalog) {
         setList(inspectionCatalog);
@@ -36,7 +36,7 @@ public final class Printout {
 
     /**
      *
-     * @param inspectionCatalog
+     * @param inspectionCatalog where the results are stored
      * @return An <code>ArrayList</code> of strings with "Passed" or "Failed" at
      * every index.
      */

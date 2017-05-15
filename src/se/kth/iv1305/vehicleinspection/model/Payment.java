@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Payment handles the cost of the inspection
  */
 public class Payment {
-     private final double cost = 100;
+     private final double costPerPart = 100;
      Amount amountCost;
      /**
       * 
@@ -23,7 +23,7 @@ public class Payment {
       * Price goes up for every part inspected
       */
     public Payment (VehicleDTO vehicle){
-       this.amountCost = new Amount(vehicle.getListSize()*cost);
+       this.amountCost = new Amount(vehicle.getListSize()*costPerPart);
     }
     /**
      * 

@@ -13,7 +13,7 @@ public class Amount {
     
     /**
      * 
-     * @param amount  
+     * @param amount - the value of something
      */
     public Amount(double amount){
         this.amount = amount;

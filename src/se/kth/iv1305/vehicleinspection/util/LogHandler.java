@@ -18,7 +18,7 @@ public class LogHandler {
     
     /**
      * Creates new PrintWriter
-     * @throws IOException 
+     * @throws IOException - Exception produced by failed I/O operation
      */
     public LogHandler() throws IOException{
         logFile = new PrintWriter(new FileWriter(FILE_NAME), true);

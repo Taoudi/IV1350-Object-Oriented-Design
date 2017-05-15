@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import se.kth.iv1305.vehicleinspection.model.VehiclePart;
 
 /**
- *
- * @author taoudi
+ * Represents a vehicle
+ * 
  */
 public final class VehicleDTO {
 

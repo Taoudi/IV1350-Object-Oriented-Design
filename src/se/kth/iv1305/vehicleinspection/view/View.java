@@ -32,7 +32,7 @@ public class View {
      *
      * @param contr the controller that is used for all system operations.
      * 
-     * @throws IOException if there is an exception to write to log
+     * @throws IOException - Exception produced by failed I/O operation
      */
     public View(Controller contr) throws IOException{
         this.contr = contr;
@@ -43,7 +43,7 @@ public class View {
    /**
     * Simulation of the view 
     * 
-    * @throws InvalidNumberException if number is invalid
+    * @throws InvalidNumberException if register number is invalid
     */
     public void sampleExecution() throws InvalidNumberException {
 

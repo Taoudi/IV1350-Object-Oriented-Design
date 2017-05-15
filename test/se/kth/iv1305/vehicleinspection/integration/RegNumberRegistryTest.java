@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
 
 /**
@@ -39,24 +40,32 @@ public class RegNumberRegistryTest {
     }
 
     /**
-     * Test of checkIfValid method, of class RegNumberRegistry.
+     * Test of checkIfValid method, of class RegNumberRegistry. This test should always fail
+     * @throws InvalidNumberException if the register number is invalid
      */
     @Test
-    public void testCheckIfValidEmptyString() {
+    public void testCheckIfValidEmptyString() throws InvalidNumberException {
+        try{
+        RegNumberRegistry registry = new RegNumberRegistry();
         VehicleDTO vehicle = new VehicleDTO("");
-        boolean expResult = false;
-        boolean result = RegNumberRegistry.checkIfValid(vehicle);
-        assertEquals("There should not be an empty string in registry", expResult, result);
+        registry.checkIfValid(vehicle);
+        fail("There should not be an empty string in the registry");
+        }
+        catch(InvalidNumberException e){
+            assertTrue("There is no empty string in the registry",true);
+        }
     }
 
     /**
      * Test of checkIfValid method, of class RegNumberRegistry.
+     * InvalidNumberException
      */
     @Test
-    public void testCheckIfValid() {
+    public void testCheckIfValid() throws InvalidNumberException {
+        RegNumberRegistry registry = new RegNumberRegistry();
         VehicleDTO vehicle = new VehicleDTO("LUL123"); //The string must be an element of the array in RegNumberRegistry
         boolean expResult = true;
-        boolean result = RegNumberRegistry.checkIfValid(vehicle);
+        boolean result = registry.checkIfValid(vehicle);
         assertEquals("There should not be an empty string in registry", expResult, result);
     }
 

@@ -10,8 +10,7 @@ import se.kth.iv1305.vehicleinspection.integration.Result;
 import se.kth.iv1305.vehicleinspection.integration.ResultObserver;
 
 /**
- *
- * @author taoudi
+ * Obvserver class
  */
  class InspectionStatsView implements ResultObserver {
 

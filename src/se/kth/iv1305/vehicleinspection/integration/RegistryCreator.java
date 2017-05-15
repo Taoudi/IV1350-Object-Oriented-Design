@@ -15,14 +15,14 @@ public class RegistryCreator {
      /**
      * Get the register number list
      *
-     * @return regNumberRegistry
+     * @return regNumberRegistry the registry with all of the registration numbers
      */
     public RegNumberRegistry getNumberRegistry() {
         return regNumberRegistry;
     }
     /**
      * Get the list of results
-     * @return inspectionCatalog
+     * @return inspectionCatalog the registry where the results are stored
      */
      public InspectionCatalog getInspectionCatalog() {
         return inspectionCatalog;

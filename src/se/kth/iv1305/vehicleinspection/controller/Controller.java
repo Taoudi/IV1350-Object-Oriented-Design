@@ -26,21 +26,30 @@ import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 
 /**
  *
- * @author taoudi
+ * Controller handles the system operation and calls methods when necessary
  */
 public class Controller {
 
     private List<ResultObserver> resultObservers = new ArrayList<>();
+    private PaymentAuthorizationSystem paySystem;
     private Garage garage;
     private RegNumberRegistry numberList;
     private Printer printer;
     private InspectionCatalog inspectionCatalog;
-
-    public Controller(RegistryCreator regCreator, Garage garage, Printer printer) {
+    
+    /**
+     * 
+     * @param regCreator creates all of the registers
+     * @param garage    instance of the garage
+     * @param printer   prints receipt/printout
+     * @param paySystem  authorizes payment
+     */
+    public Controller(RegistryCreator regCreator, Garage garage, Printer printer, PaymentAuthorizationSystem paySystem) {
         this.numberList = regCreator.getNumberRegistry();
         this.garage = garage;
         this.printer = printer;
         this.inspectionCatalog = regCreator.getInspectionCatalog();
+        this.paySystem = paySystem;
     }
 
     /**
@@ -51,6 +60,10 @@ public class Controller {
         inspectionCatalog.addResultObservers(resultObservers);
     }
 
+    /**
+    * 
+    * @param obs - reference to the ResultObserver class
+    */
     public void addResultObserver(ResultObserver obs) {
         resultObservers.add(obs);
     }
@@ -64,18 +77,18 @@ public class Controller {
 
     /**
      *
-     * @param vehicle
+     * @param vehicle the vehicle that is to be inspected
      * @return true means the regnumber is valid, false means its not
      * @throws InvalidNumberException if number is invalid
      */
     public boolean checkRegNumber(VehicleDTO vehicle) throws InvalidNumberException {
-        return RegNumberRegistry.checkIfValid(vehicle);
+        return numberList.checkIfValid(vehicle);
 
     }
 
     /**
      *
-     * @param vehicle
+     * @param vehicle the vehicle that is to be inspected
      * @return An instance of <code>Amount</code> which holds information of the
      * cost
      */
@@ -94,7 +107,7 @@ public class Controller {
         Payment payment = new Payment(vehicle);
         Inspection inspection = new Inspection(payment, printer);
         inspection.printReceipt();
-        return PaymentAuthorizationSystem.authorizePayment(creditCard, payment.getCost());
+        return paySystem.authorizePayment(creditCard, payment.getCost());
     }
 
     /**
@@ -114,7 +127,11 @@ public class Controller {
     public void storeResult(boolean inspectionPassed) {
         inspectionCatalog.storeResult(inspectionPassed);
     }
-
+    
+    /**
+     * Prints the result as a system.out operation
+     * @param vehicle - The vehicle that was expected
+     */
     public void printResult(VehicleDTO vehicle) {
         Printout printout = new Printout(inspectionCatalog);
         printer.printPrintout(printout, vehicle);

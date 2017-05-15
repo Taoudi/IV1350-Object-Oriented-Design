@@ -19,22 +19,24 @@ import se.kth.iv1305.vehicleinspection.model.CardDTO;
  * @author taoudi
  */
 public class PaymentAuthorizationSystemTest {
-    
+
     public PaymentAuthorizationSystemTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
+        
     }
-    
+
     @Before
     public void setUp() {
+
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -45,11 +47,12 @@ public class PaymentAuthorizationSystemTest {
      */
     @Test
     public void testAuthorizePayment() {
+        PaymentAuthorizationSystem paySystem = new PaymentAuthorizationSystem();
         CardDTO card = null;
         Amount amount = null;
         boolean expResult = false;
-        boolean result = PaymentAuthorizationSystem.authorizePayment(card, amount);
-        assertNotEquals(expResult, result);    
+        boolean result = paySystem.authorizePayment(card, amount);
+        assertNotEquals(expResult, result);
     }
-    
+
 }
