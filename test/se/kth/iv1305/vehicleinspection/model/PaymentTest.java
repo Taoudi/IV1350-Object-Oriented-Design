@@ -42,13 +42,14 @@ public class PaymentTest {
      * Verifies that the correct cost is calculated.
      */
     @Test
-    public void testGetCost() {
+    public void testGetCostWithDiscount() {
         VehicleDTO vehicle = new VehicleDTO("");
         Payment instance = new Payment(vehicle);
-        double expResult = vehicle.getListSize()*100;
-        double result = instance.getCost().getAmountAsDouble();
-        assertEquals("The price should be the amounr of vehicle parts times the cost per part"
-                ,expResult, result, 400);  
+        double result = instance.getAmount().getAmountAsDouble();
+        if(result == 400||result == 320)
+        assertTrue(true);
+        else
+            fail();
     }
     
 }

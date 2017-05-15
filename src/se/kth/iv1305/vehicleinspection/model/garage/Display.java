@@ -12,9 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 /**
- * Controls the queue number display outside the garage..
+ * A singleton that controls the queue number display outside the garage..
  */
 class Display {
+    private static final Display DISPLAY = new Display();
     private static String HEADER = "Now Serving:";
     private int queueNumber = -1;
     private JLabel queueNumberLabel = new JLabel("", SwingConstants.CENTER);
@@ -23,10 +24,14 @@ class Display {
      * Connects to the queue number display and shows the number
      * <code>zero</code>.
      */
-        Display() {
+        private Display() {
         nextNumber();
         contactDisplay();
     }
+        
+        public static Display getDisplay(){
+            return DISPLAY;
+        }
 
     /**
      * Increments the displayed number.

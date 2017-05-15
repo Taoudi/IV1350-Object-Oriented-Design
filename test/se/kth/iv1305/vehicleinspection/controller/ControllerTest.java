@@ -47,7 +47,7 @@ public class ControllerTest {
     @Before
     public void setUp() {
          instance = new Controller(new RegistryCreator(), 
-                new Garage(), new Printer(), new PaymentAuthorizationSystem());
+       new Garage(), new Printer(), new PaymentAuthorizationSystem());
          vehicleWithEmptyString = new VehicleDTO("");
          vehicle = new VehicleDTO("LUL123");
     }
@@ -117,7 +117,7 @@ public class ControllerTest {
     public void testCalculateCost() {
         setUp();
         Payment payment = new Payment(vehicle);
-        double expResult = payment.getCost().getAmountAsDouble();
+        double expResult = payment.getAmount().getAmountAsDouble();
         double result = instance.calculateCost(vehicle).getAmountAsDouble();
         assertEquals("The price should be 400", expResult, result,400);
         tearDown();
@@ -142,7 +142,7 @@ public class ControllerTest {
     public void testCalculateCostNegative() {
         setUp();
         Payment payment = new Payment(vehicle);
-        double expResult = -1*payment.getCost().getAmountAsDouble();;
+        double expResult = -1*payment.getAmount().getAmountAsDouble();;
         double result = instance.calculateCost(vehicle).getAmountAsDouble();
         assertNotEquals("The price should be 400", expResult, result);
         tearDown();

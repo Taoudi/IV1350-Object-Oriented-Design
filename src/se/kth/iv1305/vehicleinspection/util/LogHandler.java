@@ -27,6 +27,7 @@ public class LogHandler {
      * Write the log entries
      * @param exception the log entry 
      */
+
     public void logException(Exception exception){
         logFile.println("Exception was thrown: " + exception.getMessage());
         exception.printStackTrace(logFile);

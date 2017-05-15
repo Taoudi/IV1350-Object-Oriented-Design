@@ -94,7 +94,7 @@ public class Controller {
      */
     public Amount calculateCost(VehicleDTO vehicle) {
         Payment payment = new Payment(vehicle);
-        return payment.getCost();
+        return payment.getAmount();
     }
 
     /**
@@ -107,7 +107,7 @@ public class Controller {
         Payment payment = new Payment(vehicle);
         Inspection inspection = new Inspection(payment, printer);
         inspection.printReceipt();
-        return paySystem.authorizePayment(creditCard, payment.getCost());
+        return paySystem.authorizePayment(creditCard, payment.getAmount());
     }
 
     /**
@@ -134,7 +134,7 @@ public class Controller {
      */
     public void printResult(VehicleDTO vehicle) {
         Printout printout = new Printout(inspectionCatalog);
-        printer.printPrintout(printout, vehicle);
+        printer.printPrintout(vehicle, printout);
     }
 
 }

@@ -63,7 +63,7 @@ public class PrinterTest {
         Printout printout = new Printout(new InspectionCatalog());
         VehicleDTO vehicle = new VehicleDTO("");
         Printer instance = new Printer();
-        instance.printPrintout(printout, vehicle);
+        instance.printPrintout(vehicle, printout);
     }
     
 }

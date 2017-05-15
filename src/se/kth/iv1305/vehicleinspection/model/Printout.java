@@ -47,8 +47,16 @@ public final class Printout {
             } else {
                 text.add(i, "Failed");
             }
-
         }
+    }
 
+    public String toString(VehicleDTO vehicle) {
+        StringBuilder printoutBuilder = new StringBuilder();
+        String printString = "";
+        for (int i = 0; i < text.size(); i++) {
+            printString = (vehicle.getListOfParts().get(i).toString() + ": " + text.get(i) + "\n");
+            printoutBuilder.append(printString);
+        }
+        return printoutBuilder.toString();
     }
 }

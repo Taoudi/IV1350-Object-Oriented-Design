@@ -11,8 +11,8 @@ package se.kth.iv1305.vehicleinspection.model.garage;
  * number display on the outside wall.
  */
 public class Garage {
-    private Door door = new Door();
-    private Display queueNumDisp = new Display();
+
+
 
     /**
      * Creates an instance and connects to the door and queue number display.
@@ -24,15 +24,15 @@ public class Garage {
      * Opens the door and displays the next queue number.
      */
     public void nextCustomer() {
-        door.open();
-        queueNumDisp.nextNumber();
+        Door.getDoor().open();
+        Display.getDisplay().nextNumber();
     }
 
     /**
      * Closes the door
      */
     public void closeDoor() {
-        door.close();
+        Door.getDoor().close();
     }
 
 }
