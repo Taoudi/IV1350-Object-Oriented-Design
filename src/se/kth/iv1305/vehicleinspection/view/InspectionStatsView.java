@@ -5,22 +5,22 @@
  */
 package se.kth.iv1305.vehicleinspection.view;
 
-
 import se.kth.iv1305.vehicleinspection.integration.Result;
 import se.kth.iv1305.vehicleinspection.integration.ResultObserver;
 
 /**
  * Obvserver class
  */
- class InspectionStatsView implements ResultObserver {
+class InspectionStatsView implements ResultObserver {
 
     private int noOfPassedInspections = 0;
     private int noOfFailedInspections = 0;
 
     /**
-     * calls the method to print the current amount of passed/failed results 
-     * and the method for updating the amount of inspectionts passd/failed
-     * @param result 
+     * calls the method to print the current amount of passed/failed results and
+     * the method for updating the amount of inspectionts passd/failed
+     *
+     * @param result
      */
     @Override
     public void newResult(Result result) {
@@ -42,5 +42,3 @@ import se.kth.iv1305.vehicleinspection.integration.ResultObserver;
         System.out.println("Number of passed inspections: " + noOfPassedInspections);
     }
 }
-    
-

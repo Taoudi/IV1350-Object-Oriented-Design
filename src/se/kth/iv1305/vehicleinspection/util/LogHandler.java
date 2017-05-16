@@ -13,22 +13,25 @@ import java.io.PrintWriter;
  * This class handles the log
  */
 public class LogHandler {
+
     private static final String FILE_NAME = "vehicle-inspection-log";
     private PrintWriter logFile;
-    
+
     /**
      * Creates new PrintWriter
+     *
      * @throws IOException - Exception produced by failed I/O operation
      */
-    public LogHandler() throws IOException{
+    public LogHandler() throws IOException {
         logFile = new PrintWriter(new FileWriter(FILE_NAME), true);
     }
+
     /**
      * Write the log entries
-     * @param exception the log entry 
+     *
+     * @param exception the log entry
      */
-
-    public void logException(Exception exception){
+    public void logException(Exception exception) {
         logFile.println("Exception was thrown: " + exception.getMessage());
         exception.printStackTrace(logFile);
     }

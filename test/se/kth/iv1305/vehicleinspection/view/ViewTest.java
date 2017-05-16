@@ -22,34 +22,34 @@ import se.kth.iv1305.vehicleinspection.model.garage.Garage;
  * @author taoudi
  */
 public class ViewTest {
-    
+
     public ViewTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of sampleExecution method, of class View.
-     * Tests if the method executes without failing.
+     * Test of sampleExecution method, of class View. Tests if the method
+     * executes without failing.
      */
     @Test
-    public void testSampleExecution() throws Exception {     
-        View instance = new View(new Controller(new RegistryCreator(),new Garage(),new Printer(), new PaymentAuthorizationSystem()));
+    public void testSampleExecution() throws Exception {
+        View instance = new View(new Controller(new RegistryCreator(), new Garage(), new Printer(), new PaymentAuthorizationSystem()));
         instance.sampleExecution();
     }
-    
+
 }

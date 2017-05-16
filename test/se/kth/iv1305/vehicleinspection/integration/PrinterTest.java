@@ -20,30 +20,30 @@ import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
  * @author taoudi
  */
 public class PrinterTest {
-    
+
     public PrinterTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of printReceipt method, of class Printer.
-     * Since this is a simple void method, the test only checks if the method
-     * executes with empty strings as parameters
+     * Test of printReceipt method, of class Printer. Since this is a simple
+     * void method, the test only checks if the method executes with empty
+     * strings as parameters
      */
     @Test
     public void testPrintReceipt() {
@@ -53,9 +53,9 @@ public class PrinterTest {
     }
 
     /**
-     * Test of printPrintout method, of class Printer.
-     * Since this is a simple void method, the test only checks if the method
-     * executes with empty strings as parameters
+     * Test of printPrintout method, of class Printer. Since this is a simple
+     * void method, the test only checks if the method executes with empty
+     * strings as parameters
      */
     @Test
     public void testPrintPrintout() {
@@ -65,5 +65,5 @@ public class PrinterTest {
         Printer instance = new Printer();
         instance.printPrintout(vehicle, printout);
     }
-    
+
 }

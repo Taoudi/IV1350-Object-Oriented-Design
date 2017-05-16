@@ -10,13 +10,25 @@ package se.kth.iv1305.vehicleinspection.model;
  * Decides which price calculation to do
  */
 public class CalculateContext {
-    private Calculate context;
-    
-    public CalculateContext(Calculate context){
+
+    private final Calculate context;
+
+    /**
+     *
+     * @param context an instance of one implementation of the interface
+     * Calculate
+     */
+    public CalculateContext(Calculate context) {
         this.context = context;
     }
-    
-    public Amount calculate(VehicleDTO vehicle, Discount discount){
+
+    /**
+     *
+     * @param vehicle amount of parts decide price
+     * @param discount is taken in consideration when calculating price
+     * @return cost for the inspection
+     */
+    public Amount calculate(VehicleDTO vehicle, Discount discount) {
         return context.cost(vehicle, discount);
     }
 }

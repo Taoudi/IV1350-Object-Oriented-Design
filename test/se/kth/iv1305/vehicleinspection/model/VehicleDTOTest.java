@@ -18,40 +18,42 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class VehicleDTOTest {
-    
+
     public VehicleDTOTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of getListSize method, of class VehicleDTO, where parameter is an empty string.
+     * Test of getListSize method, of class VehicleDTO, where parameter is an
+     * empty string.
      */
     @Test
     public void testGetListSize() {
         VehicleDTO instance = new VehicleDTO("");
         int expResult = 4;
         int result = instance.getListSize();
-        assertEquals(result,expResult);
+        assertEquals(result, expResult);
         // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
-     * Test of getRegNumber method, of class VehicleDTO, where parameter is an empty string
+     * Test of getRegNumber method, of class VehicleDTO, where parameter is an
+     * empty string
      */
     @Test
     public void testGetRegNumberEmptyString() {
@@ -61,6 +63,7 @@ public class VehicleDTOTest {
         assertEquals("Wrong string is returned", expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+
     /**
      * Test of getRegNumber method, of class VehicleDTO.
      */
@@ -73,16 +76,16 @@ public class VehicleDTOTest {
         // TODO review the generated test code and remove the default call to fail.
     }
 
- 
     /**
-     * Test if FindPart method, of class VehicleDTO where parameters are empty strings
+     * Test if FindPart method, of class VehicleDTO where parameters are empty
+     * strings
      */
     @Test
     public void testFindPart() {
         VehicleDTO vehicle = new VehicleDTO("");
         VehiclePart expResult = vehicle.getListOfParts().get(0);
         VehiclePart result = vehicle.findPart();
-        assertEquals("Returned VehiclePart should be the first VehiclePart in the ArrayList, 'Brake'",expResult, result);
+        assertEquals("Returned VehiclePart should be the first VehiclePart in the ArrayList, 'Brake'", expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
 
@@ -97,5 +100,5 @@ public class VehicleDTOTest {
         assertNotEquals("ArrayList should not be null", expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
-    
+
 }

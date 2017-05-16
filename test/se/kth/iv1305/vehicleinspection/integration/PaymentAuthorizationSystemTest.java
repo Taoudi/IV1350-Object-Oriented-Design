@@ -29,7 +29,7 @@ public class PaymentAuthorizationSystemTest {
 
     @AfterClass
     public static void tearDownClass() {
-        
+
     }
 
     @Before

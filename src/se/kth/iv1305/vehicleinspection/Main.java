@@ -13,6 +13,7 @@ import se.kth.iv1305.vehicleinspection.integration.RegistryCreator;
 import se.kth.iv1305.vehicleinspection.integration.Printer;
 import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 import se.kth.iv1305.vehicleinspection.model.garage.Garage;
+
 /**
  * Performs all startup of program
  */
@@ -32,7 +33,7 @@ class Main {
             PaymentAuthorizationSystem paySystem = new PaymentAuthorizationSystem();
             Controller contr = new Controller(creator, garage, printer, paySystem);
             new View(contr).sampleExecution();
-            
+
         } catch (IOException ex) {
             System.out.println("Unable to start program");
             ex.printStackTrace();

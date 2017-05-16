@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class ReceiptTest {
-    
+
     public ReceiptTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -47,8 +47,8 @@ public class ReceiptTest {
         String result = instance.toString();
         assertEquals(expResult, result);
     }
-    
-     /**
+
+    /**
      * Test of toString method, of class Receipt.
      */
     @Test

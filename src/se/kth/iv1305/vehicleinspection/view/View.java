@@ -16,6 +16,7 @@ import se.kth.iv1305.vehicleinspection.model.Discount;
 import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 import se.kth.iv1305.vehicleinspection.model.Printout;
 import se.kth.iv1305.vehicleinspection.util.LogHandler;
+
 /**
  *
  * @author Youssef Taoudi
@@ -28,24 +29,26 @@ public class View {
     private Controller contr;
     private ErrorMessageHandler errorMessageHandler = new ErrorMessageHandler();
     private LogHandler log;
+
     /**
      * creates new instance
      *
      * @param contr the controller that is used for all system operations.
-     * 
+     *
      * @throws IOException - Exception produced by failed I/O operation
      */
-    public View(Controller contr) throws IOException{
+    public View(Controller contr) throws IOException {
         this.contr = contr;
-        contr.addResultObserver(new InspectionStatsView() {});
+        contr.addResultObserver(new InspectionStatsView() {
+        });
         this.log = new LogHandler();
     }
 
-   /**
-    * Simulation of the view 
-    * 
-    * @throws InvalidNumberException if register number is invalid
-    */
+    /**
+     * Simulation of the view
+     *
+     * @throws InvalidNumberException if register number is invalid
+     */
     public void sampleExecution() throws InvalidNumberException {
 
         VehicleDTO vehicle = new VehicleDTO("LUL123");
@@ -64,8 +67,7 @@ public class View {
             if (contr.checkRegNumber(invalidVehicle) == true) {
                 System.out.println("Number is valid!");
             }
-        }
-            catch(InvalidNumberException exc){
+        } catch (InvalidNumberException exc) {
             handleException("Invalid number, try again.", exc);
         }
         try {
@@ -73,31 +75,25 @@ public class View {
             if (contr.checkRegNumber(vehicle) == true) {
                 System.out.println("Number is valid!");
             }
-        }
-            catch(InvalidNumberException exc){
+        } catch (InvalidNumberException exc) {
             handleException("INVALID NUMBER", exc);
         }
-        
-        contr.calculateCost(vehicle,discount).getAmountAsDouble();
+
+        contr.calculateCost(vehicle, discount).getAmountAsDouble();
         System.out.println("Cost is has been calculated!");
 
-        if (contr.payWithCredit(creditCard, vehicle,discount) == true) {
+        if (contr.payWithCredit(creditCard, vehicle, discount) == true) {
             System.out.println("Payment went through");
         }
-        
-        
+
         //Hard code results for the inspections
         for (int i = 0; i < vehicle.getListOfParts().size(); i++) {
             System.out.println("Result for " + contr.specifyPart(vehicle).toString() + " has been stored in catalog");
             contr.storeResult(resultList[i]);
 
-          
         }
-        
+
         contr.printResult(vehicle);
-        
-        
-    
 
     }
 

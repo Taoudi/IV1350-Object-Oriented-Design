@@ -19,22 +19,22 @@ import se.kth.iv1305.vehicleinspection.integration.InspectionCatalog;
  * @author taoudi
  */
 public class PrintoutTest {
-    
+
     public PrintoutTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -48,22 +48,22 @@ public class PrintoutTest {
         Printout instance = new Printout(inspectionCatalog);
         ArrayList<String> result = instance.getTextList();
         ArrayList<String> expResult = new ArrayList<>();
-        assertEquals("Does not return an empty list",expResult, result);
+        assertEquals("Does not return an empty list", expResult, result);
     }
 
-     /**
+    /**
      * Test of getTextList method, of class Printout.
      */
     @Test
     public void testGetTextList() {
-         InspectionCatalog inspectionCatalog = new InspectionCatalog();
-         inspectionCatalog.storeResult(true);
-         inspectionCatalog.storeResult(false);
-         Printout instance = new Printout(inspectionCatalog);
-         ArrayList<String> result = instance.getTextList();
-         ArrayList<String> expResult = new ArrayList<>();
-         expResult.add("Passed");
-         expResult.add("Failed");
-         assertEquals("Does not return the correct list",expResult, result);
-    }   
+        InspectionCatalog inspectionCatalog = new InspectionCatalog();
+        inspectionCatalog.storeResult(true);
+        inspectionCatalog.storeResult(false);
+        Printout instance = new Printout(inspectionCatalog);
+        ArrayList<String> result = instance.getTextList();
+        ArrayList<String> expResult = new ArrayList<>();
+        expResult.add("Passed");
+        expResult.add("Failed");
+        assertEquals("Does not return the correct list", expResult, result);
+    }
 }

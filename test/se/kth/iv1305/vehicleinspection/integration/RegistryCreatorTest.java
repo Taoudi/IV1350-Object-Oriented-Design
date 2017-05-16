@@ -17,46 +17,48 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class RegistryCreatorTest {
-    
+
     public RegistryCreatorTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of getNumberRegistry method, of class RegistryCreator.
-     * Checks if the methods returns an instance of RegNumberRegistry
+     * Test of getNumberRegistry method, of class RegistryCreator. Checks if the
+     * methods returns an instance of RegNumberRegistry
      */
     @Test
     public void testGetNumberRegistry() {
-       RegistryCreator instance = new RegistryCreator();
-       if(!(instance.getNumberRegistry() instanceof RegNumberRegistry))
-           fail("The method should return an instance of RegNumberRegistry");
+        RegistryCreator instance = new RegistryCreator();
+        if (!(instance.getNumberRegistry() instanceof RegNumberRegistry)) {
+            fail("The method should return an instance of RegNumberRegistry");
+        }
     }
 
     /**
-     * Test of getInspectionCatalog method, of class RegistryCreator.
-     * Checks if the methods returns an instance of InspectionCatalog
+     * Test of getInspectionCatalog method, of class RegistryCreator. Checks if
+     * the methods returns an instance of InspectionCatalog
      */
     @Test
     public void testGetInspectionCatalog() {
         RegistryCreator instance = new RegistryCreator();
-        if(!(instance.getInspectionCatalog() instanceof InspectionCatalog))
+        if (!(instance.getInspectionCatalog() instanceof InspectionCatalog)) {
             fail("The method should return an instance of InspectionCatalog");
+        }
     }
-    
+
 }

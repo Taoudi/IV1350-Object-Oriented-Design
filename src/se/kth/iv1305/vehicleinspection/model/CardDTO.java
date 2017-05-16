@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package se.kth.iv1305.vehicleinspection.model;
+
 import java.time.YearMonth;
 
 /**
  * Represents a specific credit card.
  */
 public final class CardDTO {
+
     private final int pin;
     private final String number;
     private final String holder;
@@ -19,11 +21,11 @@ public final class CardDTO {
     /**
      * Creates a new instance representing the specified card.
      *
-     * @param pin        The pin code.
-     * @param number     The card number.
-     * @param holder     The name of the card holder.
+     * @param pin The pin code.
+     * @param number The card number.
+     * @param holder The name of the card holder.
      * @param expiryDate The expiry date.
-     * @param CVC        The CVC code.
+     * @param CVC The CVC code.
      */
     public CardDTO(int pin, String number, String holder, int expiryDate, int CVC) {
         this.pin = pin;

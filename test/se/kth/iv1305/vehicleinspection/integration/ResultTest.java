@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class ResultTest {
-    
+
     public ResultTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -45,9 +45,9 @@ public class ResultTest {
         Result instance = new Result(false);
         boolean expResult = false;
         boolean result = instance.getBoolean();
-        assertEquals(expResult, result);   
+        assertEquals(expResult, result);
     }
-    
+
     /**
      * Test of getBoolean method, of class Result if parameter is true.
      */
@@ -56,8 +56,7 @@ public class ResultTest {
         Result instance = new Result(true);
         boolean expResult = true;
         boolean result = instance.getBoolean();
-        assertEquals(expResult, result);   
+        assertEquals(expResult, result);
     }
 
- 
 }

@@ -5,14 +5,11 @@
  */
 package se.kth.iv1305.vehicleinspection.model.garage;
 
-
 /**
  * This is a facade to the hardware of the GARAGE, namely the door and the queue
  * number display on the outside wall.
  */
 public class Garage {
-
-
 
     /**
      * Creates an instance and connects to the door and queue number display.

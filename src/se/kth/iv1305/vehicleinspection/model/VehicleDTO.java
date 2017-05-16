@@ -10,7 +10,7 @@ import se.kth.iv1305.vehicleinspection.model.VehiclePart;
 
 /**
  * Represents a vehicle
- * 
+ *
  */
 public final class VehicleDTO {
 
@@ -65,7 +65,6 @@ public final class VehicleDTO {
     public VehiclePart findPart() {
         return listOfParts.get(inspectedParts++);
     }
-    
 
     public ArrayList<VehiclePart> getListOfParts() {
         return listOfParts;

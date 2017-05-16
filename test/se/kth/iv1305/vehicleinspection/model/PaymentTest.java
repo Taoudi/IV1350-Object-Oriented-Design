@@ -17,29 +17,29 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class PaymentTest {
-    
+
     public PaymentTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of getCost method, of class Payment.
-     * Verifies that the correct cost is calculated.
+     * Test of getCost method, of class Payment. Verifies that the correct cost
+     * is calculated.
      */
     @Test
     public void testGetCostWithDiscount() {
@@ -47,10 +47,11 @@ public class PaymentTest {
         Discount discount = new Discount(false);
         Payment instance = new Payment(vehicle, discount);
         double result = instance.getAmount().getAmountAsDouble();
-        if(result == 400||result == 320)
-        assertTrue(true);
-        else
+        if (result == 400 || result == 320) {
+            assertTrue(true);
+        } else {
             fail();
+        }
     }
-    
+
 }

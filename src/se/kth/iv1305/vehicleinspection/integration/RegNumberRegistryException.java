@@ -6,12 +6,15 @@
 package se.kth.iv1305.vehicleinspection.integration;
 
 /**
- * Thrown when something goes wrong while performing an operation in the <code>RegNumberResgistry</code>.
- * The message might contain more information about the error condition.
+ * Thrown when something goes wrong while performing an operation in the
+ * <code>RegNumberResgistry</code>. The message might contain more information
+ * about the error condition.
  */
-public class RegNumberRegistryException extends Exception{
+public class RegNumberRegistryException extends Exception {
+
     /**
-     * Creates a new instance representing the condition described in the specified message.
+     * Creates a new instance representing the condition described in the
+     * specified message.
      *
      * @param msg A message that describes what went wrong.
      */

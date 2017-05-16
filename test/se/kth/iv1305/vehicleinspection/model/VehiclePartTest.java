@@ -17,28 +17,29 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class VehiclePartTest {
-    
+
     public VehiclePartTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of toString method, of class VehiclePart with empty string as parameter.
+     * Test of toString method, of class VehiclePart with empty string as
+     * parameter.
      */
     @Test
     public void testToStringEmptyString() {
@@ -47,7 +48,7 @@ public class VehiclePartTest {
         String result = instance.toString();
         assertEquals("Wrong string returned", expResult, result);
     }
-    
+
     /**
      * Test of toString method, of class VehiclePart.
      */
@@ -56,6 +57,6 @@ public class VehiclePartTest {
         VehiclePart instance = new VehiclePart("ABC123");
         String expResult = "ABC123";
         String result = instance.toString();
-        assertEquals("Wrong string returned",expResult, result);
+        assertEquals("Wrong string returned", expResult, result);
     }
 }

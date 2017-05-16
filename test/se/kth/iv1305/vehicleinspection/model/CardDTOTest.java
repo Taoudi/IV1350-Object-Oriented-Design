@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class CardDTOTest {
-    
+
     public CardDTOTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -42,7 +42,7 @@ public class CardDTOTest {
      */
     @Test
     public void testGetCVC() {
-        CardDTO creditCard = new CardDTO(1324,"12345678","hejsan",123,832);
+        CardDTO creditCard = new CardDTO(1324, "12345678", "hejsan", 123, 832);
         int expResult = 832;
         int result = creditCard.getCVC();
         assertEquals(expResult, result);
@@ -53,7 +53,7 @@ public class CardDTOTest {
      */
     @Test
     public void testGetExpiryDate() {
-        CardDTO creditCard = new CardDTO(1324,"12345678","hejsan",123,832);
+        CardDTO creditCard = new CardDTO(1324, "12345678", "hejsan", 123, 832);
         int expResult = 123;
         int result = creditCard.getExpiryDate();
         assertEquals(expResult, result);
@@ -64,7 +64,7 @@ public class CardDTOTest {
      */
     @Test
     public void testGetCardHolder() {
-        CardDTO creditCard = new CardDTO(1324,"","",123,832);
+        CardDTO creditCard = new CardDTO(1324, "", "", 123, 832);
         String expResult = "";
         String result = creditCard.getCardHolder();
         assertEquals(expResult, result);
@@ -75,7 +75,7 @@ public class CardDTOTest {
      */
     @Test
     public void testGetNumber() {
-        CardDTO creditCard = new CardDTO(1324,"","hejsan",123,832);
+        CardDTO creditCard = new CardDTO(1324, "", "hejsan", 123, 832);
         String expResult = "";
         String result = creditCard.getNumber();
         assertEquals(expResult, result);
@@ -86,10 +86,10 @@ public class CardDTOTest {
      */
     @Test
     public void testGetPin() {
-        CardDTO creditCard = new CardDTO(1324,"12345678","hejsan",123,832);
+        CardDTO creditCard = new CardDTO(1324, "12345678", "hejsan", 123, 832);
         int expResult = 1324;
         int result = creditCard.getPin();
         assertEquals(expResult, result);
     }
-    
+
 }

@@ -14,7 +14,7 @@ public class Receipt {
     private String information;
 
     /**
-     * 
+     *
      * @param information - The text that will be printed
      */
     public Receipt(String information) {

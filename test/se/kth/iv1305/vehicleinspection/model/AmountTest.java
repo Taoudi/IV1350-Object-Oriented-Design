@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author taoudi
  */
 public class AmountTest {
-    
+
     public AmountTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -45,8 +45,9 @@ public class AmountTest {
         Amount instance = new Amount(-30);
         double expResult = -30;
         double result = instance.getAmountAsDouble();
-        assertEquals("Negative numbers are not returned correctly",expResult, result,-30);
+        assertEquals("Negative numbers are not returned correctly", expResult, result, -30);
     }
+
     /**
      * Test of getAmountAsDouble method with zero, of class Amount.
      */
@@ -55,10 +56,10 @@ public class AmountTest {
         Amount instance = new Amount(0);
         double expResult = 0;
         double result = instance.getAmountAsDouble();
-        assertEquals("Zero are is returned correctly",expResult, result,0);
+        assertEquals("Zero are is returned correctly", expResult, result, 0);
     }
-    
-     /**
+
+    /**
      * Test of getAmountAsDouble method with a positive double, of class Amount.
      */
     @Test
@@ -66,7 +67,7 @@ public class AmountTest {
         Amount instance = new Amount(20);
         double expResult = 20;
         double result = instance.getAmountAsDouble();
-        assertEquals("Zero are is returned correctly",expResult, result,20);
+        assertEquals("Zero are is returned correctly", expResult, result, 20);
     }
-    
+
 }

@@ -11,21 +11,22 @@ package se.kth.iv1305.vehicleinspection.model;
 public class InvalidNumberException extends Exception {
 
     private String invalidNumber;
-   
 
     /**
-     * Creates a new instance with a message telling user that the number is invalid
+     * Creates a new instance with a message telling user that the number is
+     * invalid
+     *
      * @param vehicleWithInvalidNumber Vehicle with invalid number
      */
-    public InvalidNumberException (VehicleDTO vehicleWithInvalidNumber) {
+    public InvalidNumberException(VehicleDTO vehicleWithInvalidNumber) {
         super("The register number: " + vehicleWithInvalidNumber.getRegNumber() + "is invalid");
         invalidNumber = vehicleWithInvalidNumber.getRegNumber();
     }
-    
+
     /**
      * @return the car with invalid number
      */
-    public String getInvalidNumber(){
+    public String getInvalidNumber() {
         return invalidNumber;
     }
 }

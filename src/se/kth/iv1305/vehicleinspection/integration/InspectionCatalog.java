@@ -42,19 +42,23 @@ public class InspectionCatalog {
             obs.newResult(resultList.get(arrayIndex++));
         }
     }
+
     /**
-     * Any <code>ResultObserver</code> that is passed to this method will be notified
-     * when a result is stored in catalog
+     * Any <code>ResultObserver</code> that is passed to this method will be
+     * notified when a result is stored in catalog
+     *
      * @param obs instance of ResultObserver
      */
     public void addResultObserver(ResultObserver obs) {
         resultObservers.add(obs);
     }
+
     /**
      * Is needed if several instances of ResultObserver exists
+     *
      * @param observers List of instances of ResultObserver
      */
-     public void addResultObservers(List<ResultObserver> observers) {
+    public void addResultObservers(List<ResultObserver> observers) {
         resultObservers.addAll(observers);
     }
 

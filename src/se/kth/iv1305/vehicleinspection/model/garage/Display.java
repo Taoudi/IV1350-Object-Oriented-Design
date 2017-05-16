@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
  * A singleton that controls the queue number display outside the garage..
  */
 class Display {
+
     private static final Display DISPLAY = new Display();
     private static String HEADER = "Now Serving:";
     private int queueNumber = -1;
@@ -24,14 +25,14 @@ class Display {
      * Connects to the queue number display and shows the number
      * <code>zero</code>.
      */
-        private Display() {
+    private Display() {
         nextNumber();
         contactDisplay();
     }
-        
-        public static Display getDisplay(){
-            return DISPLAY;
-        }
+
+    public static Display getDisplay() {
+        return DISPLAY;
+    }
 
     /**
      * Increments the displayed number.

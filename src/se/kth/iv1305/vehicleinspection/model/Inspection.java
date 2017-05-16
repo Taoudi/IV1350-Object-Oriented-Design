@@ -15,9 +15,9 @@ public class Inspection {
 
     Payment payment;
     Printer printer;
-    
+
     /**
-     * 
+     *
      * @param payment holds information of the payment
      * @param printer represents the printer
      */
@@ -25,8 +25,10 @@ public class Inspection {
         this.payment = payment;
         this.printer = printer;
     }
+
     /**
-     * This method creates a receipt with a string that is printed out as a System printout.
+     * This method creates a receipt with a string that is printed out as a
+     * System printout.
      */
     public void printReceipt() {
         Receipt receipt = new Receipt(Double.toString(payment.getAmount().getAmountAsDouble()) + " was payed for the Inspection");

@@ -37,13 +37,13 @@ public class Controller {
     private RegNumberRegistry numberList;
     private Printer printer;
     private InspectionCatalog inspectionCatalog;
-    
+
     /**
-     * 
+     *
      * @param regCreator creates all of the registers
-     * @param garage    instance of the garage
-     * @param printer   prints receipt/printout
-     * @param paySystem  authorizes payment
+     * @param garage instance of the garage
+     * @param printer prints receipt/printout
+     * @param paySystem authorizes payment
      */
     public Controller(RegistryCreator regCreator, Garage garage, Printer printer, PaymentAuthorizationSystem paySystem) {
         this.numberList = regCreator.getNumberRegistry();
@@ -62,9 +62,9 @@ public class Controller {
     }
 
     /**
-    * 
-    * @param obs - reference to the ResultObserver class
-    */
+     *
+     * @param obs - reference to the ResultObserver class
+     */
     public void addResultObserver(ResultObserver obs) {
         resultObservers.add(obs);
     }
@@ -128,9 +128,10 @@ public class Controller {
     public void storeResult(boolean inspectionPassed) {
         inspectionCatalog.storeResult(inspectionPassed);
     }
-    
+
     /**
      * Prints the result as a system.out operation
+     *
      * @param vehicle - The vehicle that was expected
      */
     public void printResult(VehicleDTO vehicle) {

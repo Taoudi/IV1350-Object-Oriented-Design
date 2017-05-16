@@ -40,19 +40,20 @@ public class RegNumberRegistryTest {
     }
 
     /**
-     * Test of checkIfValid method, of class RegNumberRegistry. This test should always fail
+     * Test of checkIfValid method, of class RegNumberRegistry. This test should
+     * always fail
+     *
      * @throws InvalidNumberException if the register number is invalid
      */
     @Test
     public void testCheckIfValidEmptyString() throws InvalidNumberException {
-        try{
-        RegNumberRegistry registry = new RegNumberRegistry();
-        VehicleDTO vehicle = new VehicleDTO("");
-        registry.checkIfValid(vehicle);
-        fail("There should not be an empty string in the registry");
-        }
-        catch(InvalidNumberException e){
-            assertTrue("There is no empty string in the registry",true);
+        try {
+            RegNumberRegistry registry = new RegNumberRegistry();
+            VehicleDTO vehicle = new VehicleDTO("");
+            registry.checkIfValid(vehicle);
+            fail("There should not be an empty string in the registry");
+        } catch (InvalidNumberException e) {
+            assertTrue("There is no empty string in the registry", true);
         }
     }
 
