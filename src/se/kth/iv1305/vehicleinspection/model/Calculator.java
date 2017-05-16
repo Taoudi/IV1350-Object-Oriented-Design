@@ -6,21 +6,26 @@
 package se.kth.iv1305.vehicleinspection.model;
 
 /**
- *  Calculates the price of the inspection normally
+ * Calculates the price of the inspection normally
  */
 public class Calculator implements Calculate {
-    private double costPerPart = 100;
-    Calculator(){
-    }
-    
 
-/**
- * 
- * @param vehicle that is to be inspected
- * @return the cost of the inspection if there is not a discount
- */
-    @Override
-    public Amount cost(VehicleDTO vehicle) {
-        return new Amount(vehicle.getListSize()*costPerPart);
+    private final double costPerPart = 100;
+
+    Calculator() {
     }
+
+    
+      
+    /**
+     * 
+     * @param vehicle The price goes up for every part of the vehicle inspected
+     * @param discount if there is a discount and by how much
+     * @return price for the inspection
+     */
+    @Override
+    public Amount cost(VehicleDTO vehicle, Discount discount) {
+      return new Amount(vehicle.getListSize() * costPerPart);
+    }
+
 }

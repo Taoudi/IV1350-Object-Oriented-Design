@@ -16,17 +16,15 @@ import java.util.ArrayList;
  */
 public class Payment {
 
-    private final double costPerPart = 100;
     private Amount amountCost;
-    private boolean discount = false;
 
     /**
      *
-     * @param cost
+     * @param discount holds the properties for the discount object.
      * @param vehicle Price goes up for every part inspected
      */
-    public Payment(VehicleDTO vehicle) {
-        this.amountCost = getCost(vehicle);
+    public Payment(VehicleDTO vehicle, Discount discount) {
+        this.amountCost = getCost(vehicle, discount);
     }
 
     /**
@@ -41,18 +39,17 @@ public class Payment {
      * This method calculates the cost which is dependant on whether there is a
      * discount or not.
      *
+     * @param discount is needed to know if the price should calculate with
+     * discount or not
      * @param vehicle the vehicle that is inspected
      * @return the cost of the inspection as an <code>Amount</code>
      */
-    public Amount getCost(VehicleDTO vehicle) {
-        Calculate calculator = new Calculator();
-        if (discount == false) {
-            calculator = new Calculator();
-        } else if (discount == true) {
-            calculator = new DiscountCalculator();
+    public Amount getCost(VehicleDTO vehicle, Discount discount) {
+        Amount cost = new CalculateContext(new Calculator()).calculate(vehicle, discount);
+        if (discount.getDiscountBoolean() == true) {
+            cost = new CalculateContext(new DiscountCalculator()).calculate(vehicle, discount);
         }
-        return calculator.cost(vehicle);
-
+        return cost;
     }
 
 }

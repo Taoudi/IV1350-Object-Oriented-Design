@@ -44,7 +44,7 @@ public class InspectionTest {
      */
     @Test
     public void testPrintReceipt() {
-        Inspection instance = new Inspection(new Payment(new VehicleDTO("")), new Printer());
+        Inspection instance = new Inspection(new Payment(new VehicleDTO(""), new Discount(false)), new Printer());
         instance.printReceipt();
     }
     

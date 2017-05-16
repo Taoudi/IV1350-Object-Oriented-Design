@@ -19,6 +19,7 @@ import se.kth.iv1305.vehicleinspection.integration.PaymentAuthorizationSystem;
 import se.kth.iv1305.vehicleinspection.integration.Printer;
 import se.kth.iv1305.vehicleinspection.integration.Result;
 import se.kth.iv1305.vehicleinspection.integration.ResultObserver;
+import se.kth.iv1305.vehicleinspection.model.Discount;
 import se.kth.iv1305.vehicleinspection.model.Inspection;
 import se.kth.iv1305.vehicleinspection.model.Printout;
 import se.kth.iv1305.vehicleinspection.model.VehiclePart;
@@ -92,8 +93,8 @@ public class Controller {
      * @return An instance of <code>Amount</code> which holds information of the
      * cost
      */
-    public Amount calculateCost(VehicleDTO vehicle) {
-        Payment payment = new Payment(vehicle);
+    public Amount calculateCost(VehicleDTO vehicle, Discount discount) {
+        Payment payment = new Payment(vehicle, discount);
         return payment.getAmount();
     }
 
@@ -103,8 +104,8 @@ public class Controller {
      * @param vehicle - is needed to create a new payment
      * @return true if payment was authorized, in this case it is always true
      */
-    public boolean payWithCredit(CardDTO creditCard, VehicleDTO vehicle) {
-        Payment payment = new Payment(vehicle);
+    public boolean payWithCredit(CardDTO creditCard, VehicleDTO vehicle, Discount discount) {
+        Payment payment = new Payment(vehicle, discount);
         Inspection inspection = new Inspection(payment, printer);
         inspection.printReceipt();
         return paySystem.authorizePayment(creditCard, payment.getAmount());

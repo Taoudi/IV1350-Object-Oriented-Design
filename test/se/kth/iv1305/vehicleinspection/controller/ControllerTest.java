@@ -18,6 +18,7 @@ import se.kth.iv1305.vehicleinspection.integration.ResultObserver;
 import se.kth.iv1305.vehicleinspection.model.garage.Garage;
 import se.kth.iv1305.vehicleinspection.model.Amount;
 import se.kth.iv1305.vehicleinspection.model.CardDTO;
+import se.kth.iv1305.vehicleinspection.model.Discount;
 import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 import se.kth.iv1305.vehicleinspection.model.Payment;
 import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
@@ -31,7 +32,7 @@ public class ControllerTest {
      private Controller instance;
      private VehicleDTO vehicleWithEmptyString;
      private VehicleDTO vehicle;
-    
+    private Discount discount;
     public ControllerTest() {
     }
     
@@ -50,6 +51,7 @@ public class ControllerTest {
        new Garage(), new Printer(), new PaymentAuthorizationSystem());
          vehicleWithEmptyString = new VehicleDTO("");
          vehicle = new VehicleDTO("LUL123");
+         discount = new Discount(false);
     }
     
     @After
@@ -116,9 +118,9 @@ public class ControllerTest {
     @Test
     public void testCalculateCost() {
         setUp();
-        Payment payment = new Payment(vehicle);
+        Payment payment = new Payment(vehicle, discount);
         double expResult = payment.getAmount().getAmountAsDouble();
-        double result = instance.calculateCost(vehicle).getAmountAsDouble();
+        double result = instance.calculateCost(vehicle, discount).getAmountAsDouble();
         assertEquals("The price should be 400", expResult, result,400);
         tearDown();
     }
@@ -130,7 +132,7 @@ public class ControllerTest {
     public void testCalculateCostZero() {
         setUp();
         double expResult = 0;
-        double result = instance.calculateCost(vehicle).getAmountAsDouble();
+        double result = instance.calculateCost(vehicle, discount).getAmountAsDouble();
         assertNotEquals("The price should be 400", expResult, result);
         tearDown();
     }
@@ -141,9 +143,9 @@ public class ControllerTest {
     @Test
     public void testCalculateCostNegative() {
         setUp();
-        Payment payment = new Payment(vehicle);
+        Payment payment = new Payment(vehicle, discount);
         double expResult = -1*payment.getAmount().getAmountAsDouble();;
-        double result = instance.calculateCost(vehicle).getAmountAsDouble();
+        double result = instance.calculateCost(vehicle, discount).getAmountAsDouble();
         assertNotEquals("The price should be 400", expResult, result);
         tearDown();
     }
@@ -158,7 +160,7 @@ public class ControllerTest {
         setUp();
         CardDTO creditCard = new CardDTO(0,"", "", 0,0);
         boolean expResult = false;
-        boolean result = instance.payWithCredit(creditCard, vehicle);
+        boolean result = instance.payWithCredit(creditCard, vehicle, discount);
         assertNotEquals(expResult, result);
     }
 /**
@@ -170,7 +172,7 @@ public class ControllerTest {
         setUp();
         CardDTO creditCard = new CardDTO(0,"", "", 0,0);
         boolean expResult = true;
-        boolean result = instance.payWithCredit(creditCard, vehicle);
+        boolean result = instance.payWithCredit(creditCard, vehicle, discount);
         assertEquals(expResult, result);
     }
     /**

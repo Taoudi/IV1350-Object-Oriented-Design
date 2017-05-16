@@ -12,6 +12,7 @@ import se.kth.iv1305.vehicleinspection.model.VehicleDTO;
 import se.kth.iv1305.vehicleinspection.model.VehiclePart;
 import se.kth.iv1305.vehicleinspection.model.CardDTO;
 import se.kth.iv1305.vehicleinspection.integration.Result;
+import se.kth.iv1305.vehicleinspection.model.Discount;
 import se.kth.iv1305.vehicleinspection.model.InvalidNumberException;
 import se.kth.iv1305.vehicleinspection.model.Printout;
 import se.kth.iv1305.vehicleinspection.util.LogHandler;
@@ -49,7 +50,7 @@ public class View {
 
         VehicleDTO vehicle = new VehicleDTO("LUL123");
         VehicleDTO invalidVehicle = new VehicleDTO("INVALID");
-
+        Discount discount = new Discount(false);
         CardDTO creditCard = new CardDTO(1324, "12345678", "hejsan", 123, 832);
         boolean[] resultList = {true, false, true, true};
         contr.nextCustomer();
@@ -77,10 +78,10 @@ public class View {
             handleException("INVALID NUMBER", exc);
         }
         
-        contr.calculateCost(vehicle).getAmountAsDouble();
+        contr.calculateCost(vehicle,discount).getAmountAsDouble();
         System.out.println("Cost is has been calculated!");
 
-        if (contr.payWithCredit(creditCard, vehicle) == true) {
+        if (contr.payWithCredit(creditCard, vehicle,discount) == true) {
             System.out.println("Payment went through");
         }
         

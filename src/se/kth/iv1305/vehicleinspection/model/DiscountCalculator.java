@@ -10,19 +10,18 @@ package se.kth.iv1305.vehicleinspection.model;
  * @author taoudi
  */
 public class DiscountCalculator implements Calculate {
-    private double costPerPart = 100;
-    private final double discount = 0.8;
+    private final double costPerPart = 100;
     DiscountCalculator(){      
     }
-    
-
-        /**
-         * 
-         * @param vehicle that is to be inspected
-         * @return price of the inspection if there is a discount
-         */    
+   
+    /**
+     * 
+     * @param vehicle The price goes up for every part of the vehicle inspected
+     * @param discount discount if there is a discount and by how much
+     * @return the price for the inspection if there is a discount
+     */
     @Override
-    public Amount cost(VehicleDTO vehicle) {
-          return new Amount(vehicle.getListSize()*costPerPart*discount);
+    public Amount cost(VehicleDTO vehicle, Discount discount) {
+          return new Amount(vehicle.getListSize()*costPerPart*discount.getDiscountRatio());
     }
 }

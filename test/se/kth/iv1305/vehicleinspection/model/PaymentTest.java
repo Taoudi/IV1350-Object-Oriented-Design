@@ -44,7 +44,8 @@ public class PaymentTest {
     @Test
     public void testGetCostWithDiscount() {
         VehicleDTO vehicle = new VehicleDTO("");
-        Payment instance = new Payment(vehicle);
+        Discount discount = new Discount(false);
+        Payment instance = new Payment(vehicle, discount);
         double result = instance.getAmount().getAmountAsDouble();
         if(result == 400||result == 320)
         assertTrue(true);

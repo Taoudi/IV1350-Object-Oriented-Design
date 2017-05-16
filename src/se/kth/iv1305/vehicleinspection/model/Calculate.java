@@ -13,7 +13,8 @@ public interface Calculate {
     /**
      * Calculates the cost for an  insatnce of an inspection
      * @param vehicle The vehicle that is inspected in this instance
+     * @param discount holds information if there should be discount and by how much
      * @return the cost as an instance of Amount
      */
-    Amount cost(VehicleDTO vehicle);
+    public Amount cost(VehicleDTO vehicle, Discount discount);
 }
